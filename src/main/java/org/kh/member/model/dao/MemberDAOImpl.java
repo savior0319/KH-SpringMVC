@@ -20,7 +20,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 		MemberVO mvSelect = null;
 
-		String query = "SELECT * FROM MEMBER WHERE USER_ID = ? AND USER_PW = ?";
+		String query = "SELECT * FROM MEMBER WHERE USER_ID = ? AND USER_PWD = ?";
 
 		try {
 			psmt = conn.prepareStatement(query);
@@ -32,7 +32,7 @@ public class MemberDAOImpl implements MemberDAO {
 			if (rs.next()) {
 				mvSelect = new MemberVO();
 				mvSelect.setUserId(rs.getString("USER_ID"));
-				mvSelect.setUserPw(rs.getString("USER_PW"));
+				mvSelect.setUserPw(rs.getString("USER_PWD"));
 				mvSelect.setUserName(rs.getString("USER_NAME"));
 				mvSelect.setPhone(rs.getString("USER_PHONE"));
 			}
